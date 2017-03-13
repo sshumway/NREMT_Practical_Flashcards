@@ -1,0 +1,3 @@
+rootProject.name = 'NREMT_Practical_Flashcards'
+
+include ':app'

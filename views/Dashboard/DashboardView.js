@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  Stylesheet,
+  StyleSheet,
   TouchableHighlight
 } from 'react-native';
 
@@ -11,25 +11,43 @@ class DashboardView extends Component {
     title: 'Exams'
   };
 
-  showExam() {
-    this.props.navigation.navigate('Exam');
+  showExam(exam) {
+    this.props.navigation.navigate('Exam', { exam: exam });
   }
 
   render() {
     return (
       <View>
-        <TouchableHighlight onPress={this.showExam.bind(this)}>
+        <TouchableHighlight onPress={this.showExam.bind(this, "trauma")}>
           <Text>Patient Assessment/Management - Trauma</Text>
         </TouchableHighlight>
-        <Text>Patient Assessment/Management - Medical</Text>
-        <Text>BVM Ventilation Of An Apneic Adult Patient</Text>
-        <Text>Oxygen Administration By Non-Rebreather Mask</Text>
-        <Text>Spinal Immobilization (Seated Patient)</Text>
-        <Text>Spinal Immobilization (Supine Patient)</Text>
-        <Text>Bleeding Control/Shock Management</Text>
-        <Text>Cardian Arrest Management/AED</Text>
-        <Text>Joint Immobilization</Text>
-        <Text>Long Bone Immobilization</Text>
+        <TouchableHighlight onPress={this.showExam.bind(this, "medical")}>
+          <Text>Patient Assessment/Management - Medical</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "bvm")}>
+          <Text>BVM Ventilation Of An Apneic Adult Patient</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "oxygen")}>
+          <Text>Oxygen Administration By Non-Rebreather Mask</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "seatedSpine")}>
+          <Text>Spinal Immobilization (Seated Patient)</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "supineSpine")}>
+          <Text>Spinal Immobilization (Supine Patient)</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "bleeding")}>
+          <Text>Bleeding Control/Shock Management</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "cardiac")}>
+          <Text>Cardiac Arrest Management/AED</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "joint")}>
+          <Text>Joint Immobilization</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.showExam.bind(this, "longBone")}>
+          <Text>Long Bone Immobilization</Text>
+        </TouchableHighlight>
       </View>
     );
   }

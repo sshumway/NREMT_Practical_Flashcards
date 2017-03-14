@@ -3,7 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 
 class DashboardView extends Component {
@@ -18,36 +18,36 @@ class DashboardView extends Component {
   render() {
     return (
       <View>
-        <TouchableHighlight onPress={this.showExam.bind(this, "trauma")}>
+        <TouchableOpacity onPress={this.showExam.bind(this, "trauma")}>
           <Text>Patient Assessment/Management - Trauma</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "medical")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "medical")}>
           <Text>Patient Assessment/Management - Medical</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "bvm")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "bvm")}>
           <Text>BVM Ventilation Of An Apneic Adult Patient</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "oxygen")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "oxygen")}>
           <Text>Oxygen Administration By Non-Rebreather Mask</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "seatedSpine")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "seatedSpine")}>
           <Text>Spinal Immobilization (Seated Patient)</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "supineSpine")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "supineSpine")}>
           <Text>Spinal Immobilization (Supine Patient)</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "bleeding")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "bleeding")}>
           <Text>Bleeding Control/Shock Management</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "cardiac")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "cardiac")}>
           <Text>Cardiac Arrest Management/AED</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "joint")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "joint")}>
           <Text>Joint Immobilization</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.showExam.bind(this, "longBone")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.showExam.bind(this, "longBone")}>
           <Text>Long Bone Immobilization</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     );
   }

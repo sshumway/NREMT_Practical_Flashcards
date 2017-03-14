@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     fontSize: 26,
     paddingTop: 8,
     paddingBottom: 0,
-    paddingLeft: 8,
-    paddingRight: 8
+    paddingLeft: 10,
+    paddingRight: 10
   },
   scrollView: {
     paddingTop: 8,

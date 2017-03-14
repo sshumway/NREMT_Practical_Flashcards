@@ -3,37 +3,34 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 
-const ExamLineText = ({lineType, text, points}) => {
-  return (
-    <View style={styles.wrapper}>
-      {lineType === 'sub' && <View style={styles.indent}></View>}
-      <Text style={[styles.text, styles[lineType]]}>{text}</Text>
-      {points > 0 && <Text style={[styles.points, styles[lineType]]}>{points}</Text>}
-    </View>
-  );
-};
+import ExamLineText from './ExamLineText';
 
 class ExamLineView extends Component {
   constructor(props) {
     super(props);
-    this.state = { showLine: this.props.lineType === 'header' || this.props.lineType === 'note' };
+    this.state = {
+      showLine: this.props.lineType === 'header' || this.props.lineType === 'note'
+    };
   }
 
   changeLineVisibility() {
-    this.state.showLine = !this.state.showLine;
+    this.setState({ showLine: !this.state.showLine });
   }
 
   render() {
     let line = this.props.lineType === 'header' || this.props.lineType === 'note'
-      ? <ExamLineText {...this.props} />
-      : (<TouchableHighlight onPress={this.changeLineVisibility.bind(this)}>
-          <View>
+      ? (<View style={styles.bigLine}>
+          <ExamLineText {...this.props} />
+        </View>)
+      : (<TouchableOpacity onPress={this.changeLineVisibility.bind(this)}>
+          <View style={styles.lineWrapper}>
+            <Text style={styles.lineIndicator}>►</Text>
             {this.state.showLine && <ExamLineText {...this.props} />}
           </View>
-        </TouchableHighlight>);
+        </TouchableOpacity>);
 
     return (
       <View>
@@ -44,40 +41,25 @@ class ExamLineView extends Component {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
+  lineWrapper: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
-  indent: {
-    flex: 1
+  lineIndicator: {
+    flex: 0.05
   },
-  text: {
-    flex: 6
-  },
-  points: {
-    flex: 1,
-    textAlign: 'right',
-  },
-  header: {
-    fontSize: 26,
+  bigLine: {
     backgroundColor: 'gray',
-  },
-  note: {
-    fontSize: 26,
-    backgroundColor: 'gray',
-  },
-  default: {
-    fontSize: 18
-  },
-  sub: {
-    fontSize: 18
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'gray'
   }
 });
 
 ExamLineView.propTypes = {
-  lineType: React.PropTypes.string,
-  text: React.PropTypes.string,
-  points: React.PropTypes.number
+  lineType: React.PropTypes.string.isRequired,
+  text: React.PropTypes.string.isRequired,
+  points: React.PropTypes.number.isRequired
 };
 
 export default ExamLineView;

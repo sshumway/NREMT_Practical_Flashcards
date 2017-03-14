@@ -21,8 +21,8 @@ class DashboardView extends Component {
     }
   };
 
-  _showExam(exam) {
-    this.props.navigation.navigate('Exam', { exam: exam });
+  _showExam(examID) {
+    this.props.navigation.navigate('Exam', { examID });
   }
 
   render() {

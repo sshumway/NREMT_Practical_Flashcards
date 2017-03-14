@@ -12,8 +12,14 @@ import exams from '../../data/exams';
 
 class ExamView extends Component {
   static navigationOptions = {
-    title: ({ state }) => exams.find((ex) => ex.examID === state.params.exam).shortTitle,
-    header: {
+    title: ({ state }) => exams.find((ex) => ex.examID === state.params.examID).shortTitle,
+    header: ({ state, setParams }) => ({
+      right: (
+        <Button
+          title={'CC'}
+          onPress={() => setParams({editing: state.params.editing ? false : true})}
+        />
+      ),
       style: {
         backgroundColor: '#15396a'
       },
@@ -21,7 +27,7 @@ class ExamView extends Component {
         color: 'white'
       },
       tintColor: 'white'
-    }
+    })
   };
 
   constructor(props) {
@@ -39,7 +45,7 @@ class ExamView extends Component {
 
   render() {
     const { params } = this.props.navigation.state;
-    const exam = exams.find((ex) => ex.examID === params.exam);
+    const exam = exams.find((ex) => ex.examID === params.examID);
 
     return (
       <View style={styles.wrapper}>

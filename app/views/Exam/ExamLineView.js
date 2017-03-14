@@ -12,7 +12,7 @@ class ExamLineView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLine: this.props.lineType === 'header' || this.props.lineType === 'note'
+      showLine: true//this.props.lineType === 'header' || this.props.lineType === 'note'
     };
   }
 
@@ -22,7 +22,7 @@ class ExamLineView extends Component {
 
   render() {
     let line = this.props.lineType === 'header' || this.props.lineType === 'note'
-      ? (<View style={styles.bigLine}>
+      ? (<View style={styles.highlightLine}>
           <ExamLineText {...this.props} />
         </View>)
       : (<TouchableOpacity onPress={this.changeLineVisibility.bind(this)}>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   lineIndicator: {
     flex: 0.05
   },
-  bigLine: {
+  highlightLine: {
     backgroundColor: 'gray',
     borderRadius: 4,
     borderWidth: 1,

@@ -6,7 +6,10 @@ import {
 } from 'react-native';
 
 const ExamLineText = ({lineType, text, points}) => {
-  const lineStyle = lineType === 'header' || lineType === 'note' ? styles.bigLine : styles.normalLine;
+  let lineStyle = styles.normalLine;
+  if (lineType === 'header' || lineType === 'note') {
+    lineStyle = [styles.highlightLine, styles[lineType]];
+  }
   return (
     <View style={styles.textWrapper}>
       {lineType === 'sub' && <View style={styles.indent}></View>}
@@ -32,13 +35,15 @@ const styles = StyleSheet.create({
     flex: 0.8,
     fontSize: 18
   },
-  bigLine: {
+  highlightLine: {
     paddingLeft: 4,
-    paddingRight: 4,
-    fontSize: 26,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'gray'
+    paddingRight: 4
+  },
+  header: {
+    fontSize: 22
+  },
+  note: {
+    fontSize: 18
   }
 });
 

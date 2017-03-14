@@ -33,7 +33,7 @@ class ExamView extends Component {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 26,
+    fontSize: 22,
     paddingTop: 8,
     paddingBottom: 0,
     paddingLeft: 10,

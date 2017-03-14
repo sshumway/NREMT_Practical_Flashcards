@@ -44,6 +44,15 @@ class ExamView extends Component {
     this.setState({ showAll: false });
   }
 
+  _renderDivider = (exam, step, idx) => {
+    const isHeader = (lineType) => lineType === 'header' || lineType === 'note';
+    if (idx < exam.steps.length - 1 && !isHeader(step.lineType) && !isHeader(exam.steps[idx + 1].lineType)) {
+      return (
+        <View style={styles.lineDivider}></View>
+      );
+    }
+  }
+
   render() {
     const { params } = this.props.navigation.state;
     const exam = exams.find((ex) => ex.examID === params.examID);
@@ -55,7 +64,10 @@ class ExamView extends Component {
         </View>
         <ScrollView style={styles.scrollView} contentInset={{top: 0, bottom: 10}}>
           {exam.steps.map((step, idx) =>
-            <ExamLineView key={idx} forceShow={this.state.showAll} {...step} />
+            <View key={idx}>
+              <ExamLineView forceShow={this.state.showAll} {...step} />
+              {this._renderDivider(exam, step, idx)}
+            </View>
           )}
         </ScrollView>
         <View style={styles.buttonContainerWrapper}>
@@ -80,7 +92,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8
   },
   titleWrapper: {
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     borderBottomColor: 'lightgray',
     marginLeft: 6,
     marginRight: 6
@@ -89,6 +101,10 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 6,
     paddingRight: 6
+  },
+  lineDivider: {
+    borderTopWidth: 1,
+    borderTopColor: 'lightgray'
   },
   buttonContainerWrapper: {
     height: 40,

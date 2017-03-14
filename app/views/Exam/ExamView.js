@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 
 import ExamLineView from './ExamLineView';
-import data from '../../data/data';
+import exams from '../../data/exams';
 
 class ExamView extends Component {
   static navigationOptions = {
-    title: ({ state }) => data[state.params.exam].shortTitle,
+    title: ({ state }) => exams.find((exam) => exam.examID === state.params.exam).shortTitle,
     header: {
       style: {
         backgroundColor: '#15396a'
@@ -26,7 +26,7 @@ class ExamView extends Component {
 
   render() {
     const { params } = this.props.navigation.state;
-    const exam = data[params.exam];
+    const exam = exams.find((exam) => exam.examID === params.exam);
     return (
       <View style={styles.wrapper}>
         <View style={styles.titleWrapper}>
@@ -34,7 +34,9 @@ class ExamView extends Component {
         </View>
         <ScrollView style={styles.scrollView} contentInset={{top: 0, bottom: 100}}>
           {exam.steps.map((step, idx) => {
-            return (<ExamLineView key={idx} {...step}></ExamLineView>);
+            return (
+                <ExamLineView key={idx} {...step} />
+            );
           })}
         </ScrollView>
       </View>
@@ -61,6 +63,9 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 6,
     paddingRight: 6
+  },
+  examLineWrapper: {
+    flex: 1,
   }
 });
 

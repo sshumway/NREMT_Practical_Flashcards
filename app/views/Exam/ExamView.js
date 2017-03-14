@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     paddingTop: 8,
-    paddingBottom: 0
+    paddingBottom: 8
   },
   titleWrapper: {
     borderBottomWidth: 1,

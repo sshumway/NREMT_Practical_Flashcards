@@ -6,7 +6,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import exams from '../../data/exams';
+import exams from '../../../data/exams';
 
 class DashboardView extends Component {
   static navigationOptions = {

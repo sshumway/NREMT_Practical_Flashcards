@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import ExamLineView from './ExamLineView';
-import exams from '../../data/exams';
+import exams from '../../../data/exams';
 
 class ExamView extends Component {
   static navigationOptions = {

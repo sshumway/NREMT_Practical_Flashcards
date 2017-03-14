@@ -6,7 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-import exams from '../../data/exams';
+import exams from '../../../data/exams';
 
 const CriticalCriteriaView = (nav) => {
   let examID = nav.navigation.state.params.examID;

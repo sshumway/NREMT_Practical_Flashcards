@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   textWrapper: {
     flex: 1,
     flexDirection: 'row',
+    paddingTop: 6,
+    paddingBottom: 6
   },
   indent: {
     flex: 0.1

@@ -16,43 +16,42 @@ class ExamLineView extends Component {
     };
   }
 
-  changeLineVisibility() {
+  _changeLineVisibility = () => {
     this.setState({ showLine: !this.state.showLine });
   }
 
   render() {
-    let line = this.props.lineType === 'header' || this.props.lineType === 'note'
-      ? (<View style={styles.highlightLine}>
+    if (this.props.lineType === 'header' || this.props.lineType === 'note') {
+      return (
+        <View style={styles.highlightLine}>
           <ExamLineText {...this.props} />
-        </View>)
-      : (<TouchableOpacity onPress={this.changeLineVisibility.bind(this)}>
-          <View style={styles.lineWrapper}>
-            <Text style={styles.lineIndicator}>►</Text>
-            {this.state.showLine && <ExamLineText {...this.props} />}
-          </View>
-        </TouchableOpacity>);
-
+        </View>
+      );
+    }
+    const lineText = this.state.showLine
+      ? <ExamLineText {...this.props} />
+      : <Text style={styles.showText}>Show</Text>;
     return (
-      <View>
-        {line}
-      </View>
+      <TouchableOpacity onPress={this._changeLineVisibility}>
+        {lineText}
+      </TouchableOpacity>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  lineWrapper: {
-    flex: 1,
-    flexDirection: 'row'
-  },
-  lineIndicator: {
-    flex: 0.05
-  },
   highlightLine: {
     backgroundColor: 'lightgray',
     borderRadius: 4,
     borderWidth: 1,
     borderColor: 'lightgray'
+  },
+  showText: {
+    fontSize: 18,
+    paddingBottom: 6,
+    paddingTop: 6,
+    color: 'gray',
+    textAlign: 'center'
   }
 });
 

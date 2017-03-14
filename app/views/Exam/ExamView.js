@@ -13,11 +13,12 @@ import exams from '../../data/exams';
 class ExamView extends Component {
   static navigationOptions = {
     title: ({ state }) => exams.find((ex) => ex.examID === state.params.examID).shortTitle,
-    header: ({ state, setParams }) => ({
+    header: ({ state, navigate }) => ({
       right: (
         <Button
-          title={'CC'}
-          onPress={() => setParams({editing: state.params.editing ? false : true})}
+          title='CC'
+          color='white'
+          onPress={() => navigate('CriticalCriteria', { examID: state.params.examID })}
         />
       ),
       style: {
@@ -105,9 +106,5 @@ const styles = StyleSheet.create({
     padding: 8
   }
 });
-
-ExamView.propTypes = {
-  examID: React.PropTypes.string.isRequired
-};
 
 export default ExamView;

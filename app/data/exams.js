@@ -235,7 +235,21 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Demonstrates how and when to reassess the patient"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to initiate or call for transport of the patient within 10 minute time limit",
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to determine scene safety",
+      "Failure to assess for and provide spinal protection when indicated",
+      "Failure to voice and ultimately provide high concentration oxygen",
+      "Failure to assess/provide adequate ventilation",
+      "Failure to find or appropriately manage problems associated with airway, breathing, hemorrhage or shock",
+      "Failure to differentiate patient’s need for immediate transportation versus continued assessment/treatment at the scene",
+      "Performs other assessment before assessing/treating threats to airway, breathing and circulation",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "medical",
     title: "Patient Assessment/Management - Medical",
@@ -460,7 +474,21 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Provides accurate verbal report to arriving EMS unit"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to initiate or call for transport of the patient within 15 minute time limit",
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to determine scene safety before approaching patient",
+      "Failure to voice and ultimately provide appropriate oxygen therapy",
+      "Failure to assess/provide adequate ventilation",
+      "Failure to find or appropriately manage problems associated with airway, breathing, hemorrhage or shock",
+      "Failure to differentiate patient’s need for immediate transportation versus continued assessment or treatment at the scene",
+      "Performs secondary examination before assessing and treating threats to airway, breathing and circulation",
+      "Failure to provide accurate report to arriving EMS unit",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "cardiac",
     title: "Cardiac Arrest Management / AED",
@@ -545,7 +573,22 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Immediately directs rescuer to resume chest compressions"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to check responsiveness, then check breathing and pulse simultaneously for no more than 10 seconds",
+      "Failure to immediately begin chest compressions as soon as pulselessness is confirmed",
+      "Failure to demonstrate acceptable high-quality, 1-rescuer adult CPR",
+      "Interrupts CPR for more than 10 seconds at any point",
+      "Failure to correctly attach the AED to the patient",
+      "Failure to operate the AED properly",
+      "Failure to deliver shock in a timely manner",
+      "Failure to ensure that all individuals are clear of patient during rhythm analysis and before delivering shock [verbalizes “All clear” and observes]",
+      "Failure to immediately resume compressions after shock delivered",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "bvm",
     title: "BVM Ventilation Of An Apneic Adult Patient",
@@ -642,7 +685,21 @@ export default [{
       lineType: "note",
       points: 0,
       text: "The examiner must now ask the candidate, \"How would you know if you are delivering appropriate volumes with each ventilation?\""
-    }]
+    }],
+    criticalCriteria: [
+      "After suctioning the patient, failure to initiate ventilations within 30 seconds or interrupts ventilations for greater than 30 seconds at any time",
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to suction airway before ventilating the patient",
+      "Suctions the patient for an excessive and prolonged time",
+      "Failure to check responsiveness, then check breathing and pulse simultaneously for no more than 10 seconds",
+      "Failure to voice and ultimately provide high oxygen concentration [at least 85%]",
+      "Failure to ventilate the patient at a rate of 10 – 12/minute (1 ventilation every 5 – 6 seconds)",
+      "Failure to provide adequate volumes per breath [maximum 2 errors/minute permissible]",
+      "Insertion or use of any adjunct in a manner dangerous to the patient",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "oxygen",
     title: "Oxygen Administration By Non-rebreather Mask",
@@ -691,7 +748,17 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Attaches mask to patient's face and adjusts to fit snugly"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to assemble the oxygen tank and regulator without leaks",
+      "Failure to prefill the reservoir bag",
+      "Failure to adjust the oxygen flow rate to the non-rebreather mask of at lease 10 L/minute",
+      "Failure to ensure a tight mask seal to patient’s face",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "bleeding",
     title: "Bleeding Control/Shock Management",
@@ -732,7 +799,16 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Indicates need for immediate transportation"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to take or verbalize appropriate PPE precautions",
+      "Failure to administer high concentration oxygen",
+      "Failure to control hemorrhage using correct procedures in a timely manner",
+      "Failure to indicate the need for immediate transportation",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "joint",
     title: "Joint Immobilization",
@@ -781,7 +857,16 @@ export default [{
       lineType: "note",
       points: 0,
       text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\""
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to immediately stabilize the extremity manually",
+      "Grossly moves the injured extremity",
+      "Failure to immobilize the bone above and below the injury site",
+      "Failure to reassess distal motor, sensory and circulatory functions in the injured extremity before and after splinting",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "longBone",
     title: "Long Bone Immobilization",
@@ -834,7 +919,17 @@ export default [{
       lineType: "note",
       text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\"",
       points: 0
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to immediately stabilize the extremity manually",
+      "Grossly moves the injured extremity",
+      "Failure to immobilize the joint above and the joint below the injury site",
+      "Failure to immobilize the hand or foot in a position of function",
+      "Failure to reassess distal motor, sensory and circulatory functions in the injured extremity before and after splinting",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "seatedSpine",
     title: "Spinal Immobilization (Seated Patient)",
@@ -887,7 +982,22 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Reassesses motor, sensory and circulatory function in each extremity"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to immediately direct or take manual stabilization of the head",
+      "Failure to properly apply appropriately sized cervical collar before ordering release of manual stabilization",
+      "Released or ordered release of manual stabilization before it was maintained mechanically",
+      "Manipulated or moved patient excessively causing potential spinal compromise",
+      "Head immobilized to the device before device sufficiently secured to the torso",
+      "Device moves excessively up, down, left or right on the patient’s torso",
+      "Head immobilization allows for excessive movement",
+      "Torso fixation inhibits chest rise, resulting in respiratory compromise",
+      "Upon completion of immobilization, head is not in a neutral, in-line position",
+      "Failure to reassess motor, sensory and circulatory functions in each extremity after voicing immobilization to the long backboard",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }, {
     examID: "supineSpine",
     title: "Spinal Immobilization (Supine Patient)",
@@ -948,6 +1058,20 @@ export default [{
       lineType: "default",
       points: 1,
       text: "Reassesses motor, sensory and circulatory function in each extremity"
-    }]
+    }],
+    criticalCriteria: [
+      "Failure to immediately direct or take manual stabilization of the head",
+      "Failure to properly apply appropriately sized cervical collar before ordering release of manual stabilization",
+      "Released or ordered release of manual stabilization before it was maintained mechanically",
+      "Manipulated or moved the patient excessively causing potential spinal compromise",
+      "Head immobilized to the device before device sufficiently secured to the torso",
+      "Patient moves excessively up, down, left or right on the device",
+      "Head immobilization allows for excessive movement",
+      "Upon completion of immobilization, head is not in a neutral, in-line position",
+      "Failure to reassess motor, sensory and circulatory functions in each extremity after immobilizing patient to the device",
+      "Failure to manage the patient as a competent EMT",
+      "Exhibits unacceptable affect with patient or other personnel",
+      "Uses or orders a dangerous or inappropriate intervention"
+    ]
   }
 ];

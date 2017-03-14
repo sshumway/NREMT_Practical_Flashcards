@@ -241,11 +241,11 @@ export default {
     shortTitle: "Medical",
     steps: [{
       lineType: "default",
-      point: 1,
+      points: 1,
       text: "Takes or verbalizes appropriate PPE precautions"
     }, {
       lineType: "header",
-      point: 0,
+      points: 0,
       text: "Scene Size-Up"
     }, {
       lineType: "default",
@@ -382,42 +382,42 @@ export default {
     }, {
       lineType: "header",
       points: 0,
-      text: "Initiates appropriate oxygen therapy"
+      text: "Secondary assessment"
     }, {
       lineType: "default",
       points: 5,
       text: "Assesses affected body parts/system"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Cardiovascular"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Pulmonary"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Neurological"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Musculoskeletal"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Integumentary"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "GI/GU"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Reproductive"
     }, {
       lineType: "sub",
-      points: 1,
+      points: 0,
       text: "Psychological/Social"
     }, {
       lineType: "header",

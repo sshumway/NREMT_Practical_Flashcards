@@ -10,7 +10,7 @@ import exams from '../../../data/exams';
 
 const CriticalCriteriaView = (nav) => {
   let examID = nav.navigation.state.params.examID;
-  let criticalCriteria = exams.exams.find((ex) => ex.examID === examID).criticalCriteria;
+  let criticalCriteria = exams.find((ex) => ex.examID === examID).criticalCriteria;
   return (
     <View style={styles.wrapper}>
       <ScrollView style={styles.scrollView}>

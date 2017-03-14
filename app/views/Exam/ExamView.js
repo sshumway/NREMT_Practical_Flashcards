@@ -12,7 +12,7 @@ import exams from '../../../data/exams';
 
 class ExamView extends Component {
   static navigationOptions = {
-    title: ({ state }) => exams.find((ex) => ex.examID === state.params.examID).shortTitle,
+    title: ({ state }) => exams.exams.find((ex) => ex.examID === state.params.examID).shortTitle,
     header: ({ state, navigate }) => ({
       right: (
         <Button
@@ -55,7 +55,7 @@ class ExamView extends Component {
 
   render() {
     const { params } = this.props.navigation.state;
-    const exam = exams.find((ex) => ex.examID === params.examID);
+    const exam = exams.exams.find((ex) => ex.examID === params.examID);
 
     return (
       <View style={styles.wrapper}>

@@ -28,7 +28,7 @@ class DashboardView extends Component {
   render() {
     return (
       <ScrollView style={styles.wrapper} contentInset={{top: 0, bottom: 100}}>
-        {exams.map((exam, idx) => {
+        {exams.exams.map((exam, idx) => {
           return (
             <TouchableOpacity key={idx} onPress={this._showExam.bind(this, exam.examID)} style={styles.borderBottom}>
               <Text style={styles.examLink}>{exam.title}</Text>

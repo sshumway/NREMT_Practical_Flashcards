@@ -106,4 +106,8 @@ const styles = StyleSheet.create({
   }
 });
 
+ExamView.propTypes = {
+  examID: React.PropTypes.string.isRequired
+};
+
 export default ExamView;

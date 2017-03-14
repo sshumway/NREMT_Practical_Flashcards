@@ -6,6 +6,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import exams from '../../data/exams';
+
 class DashboardView extends Component {
   static navigationOptions = {
     title: 'Exams',
@@ -19,43 +21,20 @@ class DashboardView extends Component {
     }
   };
 
-  showExam(exam) {
+  _showExam(exam) {
     this.props.navigation.navigate('Exam', { exam: exam });
   }
 
   render() {
     return (
       <ScrollView style={styles.wrapper} contentInset={{top: 0, bottom: 100}}>
-        <TouchableOpacity onPress={this.showExam.bind(this, "trauma")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Patient Assessment/Management - Trauma</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "medical")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Patient Assessment/Management - Medical</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "bvm")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>BVM Ventilation Of An Apneic Adult Patient</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "oxygen")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Oxygen Administration By Non-Rebreather Mask</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "seatedSpine")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Spinal Immobilization (Seated Patient)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "supineSpine")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Spinal Immobilization (Supine Patient)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "bleeding")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Bleeding Control/Shock Management</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "cardiac")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Cardiac Arrest Management/AED</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "joint")} style={styles.borderBottom}>
-          <Text style={styles.examLink}>Joint Immobilization</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.showExam.bind(this, "longBone")}>
-          <Text style={styles.examLink}>Long Bone Immobilization</Text>
-        </TouchableOpacity>
+        {exams.map((exam, idx) => {
+          return (
+            <TouchableOpacity key={idx} onPress={this._showExam.bind(this, exam.examID)} style={styles.borderBottom}>
+              <Text style={styles.examLink}>{exam.title}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </ScrollView>
     );
   }

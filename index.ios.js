@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import Navigator from './views/Navigator/NavigatorView';
+import Navigator from './app/views/Navigator/NavigatorView';
 
 export default class NREMT_Practical_Flashcards extends Component {
   render() {

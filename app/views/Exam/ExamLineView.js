@@ -12,7 +12,7 @@ class ExamLineView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showLine: true//this.props.lineType === 'header' || this.props.lineType === 'note'
+      showLine: this.props.lineType === 'header' || this.props.lineType === 'note'
     };
   }
 
@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
     flex: 0.05
   },
   highlightLine: {
-    backgroundColor: 'gray',
+    backgroundColor: 'lightgray',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: 'gray'
+    borderColor: 'lightgray'
   }
 });
 

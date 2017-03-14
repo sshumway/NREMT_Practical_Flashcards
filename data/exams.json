@@ -1,15 +1,3 @@
-/*
-  <examName>: {
-    order: #,
-    title: "",
-    shortTitle: "",
-    steps: [{
-      lineType: "(header|default|sub|note)",
-      text: "",
-      points: #
-    }]
-  }
-*/
 [
   {
     "examID": "trauma",

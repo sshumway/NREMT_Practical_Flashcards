@@ -24,7 +24,7 @@ class ExamLineView extends Component {
 
   _renderFront = () => {
     return (
-      <View style={styles.flipMeWrapper}>
+      <View style={styles.linePosition}>
         <TouchableOpacity onPress={this._flip} style={{backgroundColor: 'black', padding: 8}}>
           <Text style={{fontSize: 18, color: 'white'}}>Flip</Text>
         </TouchableOpacity>
@@ -34,20 +34,20 @@ class ExamLineView extends Component {
 
   _renderBack = () => {
      return (
-       <View style={styles.answerWrapper}>
-        <TouchableOpacity onPress={this._flip} style={{backgroundColor: 'green', padding: 8}}>
-          <ExamLineText {...this.props} />
+       <View style={styles.linePosition}>
+        <TouchableOpacity onPress={this._flip} style={{backgroundColor: 'black', padding: 8}}>
+          <Text style={{fontSize: 18, color: 'white'}}>Flip back</Text>
         </TouchableOpacity>
       </View>
     );
-    // <Text style={{fontSize: 18, color: 'white'}}>Flip back</Text>
+    // <ExamLineText {...this.props} />
   }
 
   render() {
     if (this.props.lineType === 'header' || this.props.lineType === 'note') {
       return (
         <View style={styles.highlightLine}>
-          <ExamLineText {...this.props} />
+          <Text>Some Text</Text>
         </View>
       );
     }
@@ -65,6 +65,10 @@ class ExamLineView extends Component {
 }
 
 const styles = StyleSheet.create({
+  lineWrapper: {
+    flex: 1,
+    flexDirection: 'row'
+  },
   lineIndicator: {
     flex: 0.05
   },
@@ -74,20 +78,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'lightgray'
   },
-  flipMeWrapper: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#81D4FA'
-  },
-  answerWrapper: {
-    flex: 1,
+  linePosition: {
     backgroundColor: '#81D4FA',
-    //justifyContent: 'center',
-    //alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   cardContainer: {
-    height: 100
+    flex: 1
   }
 });
 

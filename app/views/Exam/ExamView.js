@@ -46,8 +46,7 @@ class ExamView extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: 'white',
-    flex: 1
+    backgroundColor: 'white'
   },
   title: {
     fontSize: 22,
@@ -64,6 +63,9 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 6,
     paddingRight: 6
+  },
+  examLineWrapper: {
+    flex: 1,
   }
 });
 

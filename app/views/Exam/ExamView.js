@@ -24,17 +24,39 @@ class ExamView extends Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { showAll: false }
+  }
+
+  _showAll = () => {
+    this.setState({ showAll: true });
+  }
+
+  _hideAll = () => {
+    this.setState({ showAll: false });
+  }
+
   render() {
     const { params } = this.props.navigation.state;
     const exam = exams.find((ex) => ex.examID === params.exam);
+
     return (
       <View style={styles.wrapper}>
         <View style={styles.titleWrapper}>
           <Text style={styles.title}>{exam.title}</Text>
         </View>
-        <ScrollView style={styles.scrollView} contentInset={{top: 0, bottom: 100}}>
-          {exam.steps.map((step, idx) => <ExamLineView key={idx} {...step}></ExamLineView>)}
+        <ScrollView style={styles.scrollView} contentInset={{top: 0, bottom: 10}}>
+          {exam.steps.map((step, idx) =>
+            <ExamLineView key={idx} forceShow={this.state.showAll} {...step} />
+          )}
         </ScrollView>
+        <View style={styles.buttonContainerWrapper}>
+        <View style={styles.buttonContainer}>
+          <Button style={styles.button} onPress={this._showAll} title="Show All" color="#15396a" />
+          <Button style={styles.button} onPress={this._hideAll} title="Hide All" color="#15396a" />
+        </View>
+        </View>
       </View>
     );
   }
@@ -42,7 +64,8 @@ class ExamView extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    flex: 1
   },
   title: {
     fontSize: 22,
@@ -59,6 +82,21 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 6,
     paddingRight: 6
+  },
+  buttonContainerWrapper: {
+    height: 40,
+    borderTopWidth: 1,
+    borderTopColor: 'lightgray'
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  button: {
+    flex: 0.5,
+    padding: 8
   }
 });
 

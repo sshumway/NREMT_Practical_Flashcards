@@ -16,11 +16,19 @@ class ExamLineView extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.forceShow != null && nextProps.forceShow !== this.props.showAll && !(this.props.lineType === 'header' || this.props.lineType === 'note')) {
+      this.setState({ showLine: nextProps.forceShow });
+    }
+  }
+
   _changeLineVisibility = () => {
     this.setState({ showLine: !this.state.showLine });
   }
 
   render() {
+    const showIt = this.state.forceShow;
+    const please = this.props.forceShow;
     if (this.props.lineType === 'header' || this.props.lineType === 'note') {
       return (
         <View style={styles.highlightLine}>
@@ -58,7 +66,8 @@ const styles = StyleSheet.create({
 ExamLineView.propTypes = {
   lineType: React.PropTypes.string.isRequired,
   text: React.PropTypes.string.isRequired,
-  points: React.PropTypes.number.isRequired
+  points: React.PropTypes.number.isRequired,
+  forceShow: React.PropTypes.bool
 };
 
 export default ExamLineView;

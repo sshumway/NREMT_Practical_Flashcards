@@ -19,18 +19,18 @@ const ExamLineText = ({lineType, text, points}) => {
 
 const styles = StyleSheet.create({
   textWrapper: {
-    flex: 1,
-    flexDirection: 'row',
+    //flex: 1,
+    //flexDirection: 'row',
   },
   indent: {
-    flex: 0.1
+    //flex: 0.1
   },
   points: {
-    flex: 0.1,
+    //flex: 0.1,
     textAlign: 'right'
   },
   normalLine: {
-    flex: 0.8,
+    //flex: 0.8,
     fontSize: 18
   },
   highlightLine: {

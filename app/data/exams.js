@@ -1,5 +1,6 @@
 /*
   <examName>: {
+    order: #,
     title: "",
     shortTitle: "",
     steps: [{
@@ -10,8 +11,8 @@
   }
 */
 
-export default {
-  trauma: {
+export default [{
+    examID: "trauma",
     title: "Patient Assessment/Management - Trauma",
     shortTitle: "Trauma",
     steps: [{
@@ -235,8 +236,8 @@ export default {
       points: 1,
       text: "Demonstrates how and when to reassess the patient"
     }]
-  },
-  medical: {
+  }, {
+    examID: "medical",
     title: "Patient Assessment/Management - Medical",
     shortTitle: "Medical",
     steps: [{
@@ -460,8 +461,93 @@ export default {
       points: 1,
       text: "Provides accurate verbal report to arriving EMS unit"
     }]
-  },
-  bvm: {
+  }, {
+    examID: "cardiac",
+    title: "Cardiac Arrest Management / AED",
+    shortTitle: "Cardiac/AED",
+    steps: [{
+      lineType: "default",
+      points: 1,
+      text: "Takes or verbalizes appropriate PPE precautions"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Determines the scene/situation is safe"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Attempts to question bystanders about arrest event"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Checks patient responsiveness"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Requests additional EMS assistance"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Checks breathing and pulse simultaneously"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "After checking responsiveness, then checking breathing and pulse for no more than 10 seconds, examiner informs candidate, \"The patient is unresponsive, apneic and pulseless.\""
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Immediately begins chest compressions [adequate depth and rate; allows the chest to recoil completely]"
+    }, {
+      lineType: "default",
+      points: 5,
+      text: "Performs 2 minutes of high-quality, 1-rescuer adult CPR"
+    }, {
+      lineType: "sub",
+      points: 1,
+      text: "Adequate depth and rate"
+    }, {
+      lineType: "sub",
+      points: 1,
+      text: "Correct compression-to-ventilation ratio"
+    }, {
+      lineType: "sub",
+      points: 1,
+      text: "Allows the chest to recoil completely"
+    }, {
+      lineType: "sub",
+      points: 1,
+      text: "Adequate volumes for each breath"
+    }, {
+      lineType: "sub",
+      points: 1,
+      text: "Minimal interruptions of no more than 10 seconds throughout"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "After 2 minutes (5 cycles), candidate assesses patient and second rescuer resumes compressions while candidate operates AED"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Turns on power to AED"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Follows prompts and correctly attaches AED to patient"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Stops CPR and ensures all individuals are clear of the patient during  analysis"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Ensures that all individuals are clear of the patient and delivers shock from AED"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Immediately directs rescuer to resume chest compressions"
+    }]
+  }, {
+    examID: "bvm",
     title: "BVM Ventilation Of An Apneic Adult Patient",
     shortTitle: "BVM",
     steps: [{
@@ -557,8 +643,8 @@ export default {
       points: 0,
       text: "The examiner must now ask the candidate, \"How would you know if you are delivering appropriate volumes with each ventilation?\""
     }]
-  },
-  oxygen: {
+  }, {
+    examID: "oxygen",
     title: "Oxygen Administration By Non-rebreather Mask",
     shortTitle: "O2 Administration",
     steps: [{
@@ -606,8 +692,151 @@ export default {
       points: 1,
       text: "Attaches mask to patient's face and adjusts to fit snugly"
     }]
-  },
-  seatedSpine: {
+  }, {
+    examID: "bleeding",
+    title: "Bleeding Control/Shock Management",
+    shortTitle: "Bleeding/Shock",
+    steps: [{
+      lineType: "default",
+      points: 1,
+      text: "Takes or verbalizes appropriate PPE precautions"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Applies direct pressure to the wound"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "The examiner must now inform candidate that the wound continues to bleed"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Applies tourniquet"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "The examiner must now inform candidate that the patient is exhibiting signs and symptoms of hypoperfusion"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Properly positions patient"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Administers high concentration oxygen"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Initiates steps to prevent heat loss from the patient"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Indicates need for immediate transportation"
+    }]
+  }, {
+    examID: "joint",
+    title: "Joint Immobilization",
+    shortTitle: "Joint Immobilization",
+    steps: [{
+      lineType: "default",
+      points: 1,
+      text: "Takes or verbalizes appropriate PPE precautions"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Directs application of manual stabilization of the injury"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Assesses distal motor, sensory and circulatory functions in the injured extremity"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\""
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Selects the proper splinting material"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Immobilizes the site of the injury"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Immobilizes the bone above the injury site"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Immobilizes the bone below the injury site"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Secures the entire injured extremity"
+    }, {
+      lineType: "default",
+      points: 1,
+      text: "Reassesses distal motor, sensory and circulatory functions in the injured extremity"
+    }, {
+      lineType: "note",
+      points: 0,
+      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\""
+    }]
+  }, {
+    examID: "longBone",
+    title: "Long Bone Immobilization",
+    shortTitle: "Long Bone",
+    steps: [{
+      lineType: "default",
+      text: "Takes or verbalizes appropriate PPE precautions",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Directs application of manual stabilization of the injury",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Assesses distal motor, sensory and circulatory functions in the injured extremity",
+      points: 1
+    }, {
+      lineType: "note",
+      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\"",
+      points: 0
+    }, {
+      lineType: "default",
+      text: "Measures the splint",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Applies the splint",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Immobilizes the joint above the injury site",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Immobilizes the joint below the injury site",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Secures the entire injured extremity",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Immobilizes the hand/foot in the position of function",
+      points: 1
+    }, {
+      lineType: "default",
+      text: "Reassesses distal motor, sensory and circulatory functions in the injured extremity",
+      points: 1
+    }, {
+      lineType: "note",
+      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\"",
+      points: 0
+    }]
+  }, {
+    examID: "seatedSpine",
     title: "Spinal Immobilization (Seated Patient)",
     shortTitle: "Seated Spinal Immobilization",
     steps: [{
@@ -659,8 +888,8 @@ export default {
       points: 1,
       text: "Reassesses motor, sensory and circulatory function in each extremity"
     }]
-  },
-  supineSpine: {
+  }, {
+    examID: "supineSpine",
     title: "Spinal Immobilization (Supine Patient)",
     shortTitle: "Supine Spinal Immobilization",
     steps: [{
@@ -720,233 +949,5 @@ export default {
       points: 1,
       text: "Reassesses motor, sensory and circulatory function in each extremity"
     }]
-  },
-  bleeding: {
-    title: "Bleeding Control/Shock Management",
-    shortTitle: "Bleeding/Shock",
-    steps: [{
-      lineType: "default",
-      points: 1,
-      text: "Takes or verbalizes appropriate PPE precautions"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Applies direct pressure to the wound"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "The examiner must now inform candidate that the wound continues to bleed"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Applies tourniquet"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "The examiner must now inform candidate that the patient is exhibiting signs and symptoms of hypoperfusion"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Properly positions patient"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Administers high concentration oxygen"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Initiates steps to prevent heat loss from the patient"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Indicates need for immediate transportation"
-    }]
-  },
-  cardiac: {
-    title: "Cardiac Arrest Management / AED",
-    shortTitle: "Cardiac/AED",
-    steps: [{
-      lineType: "default",
-      points: 1,
-      text: "Takes or verbalizes appropriate PPE precautions"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Determines the scene/situation is safe"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Attempts to question bystanders about arrest event"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Checks patient responsiveness"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Requests additional EMS assistance"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Checks breathing and pulse simultaneously"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "After checking responsiveness, then checking breathing and pulse for no more than 10 seconds, examiner informs candidate, \"The patient is unresponsive, apneic and pulseless.\""
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Immediately begins chest compressions [adequate depth and rate; allows the chest to recoil completely]"
-    }, {
-      lineType: "default",
-      points: 5,
-      text: "Performs 2 minutes of high-quality, 1-rescuer adult CPR"
-    }, {
-      lineType: "sub",
-      points: 1,
-      text: "Adequate depth and rate"
-    }, {
-      lineType: "sub",
-      points: 1,
-      text: "Correct compression-to-ventilation ratio"
-    }, {
-      lineType: "sub",
-      points: 1,
-      text: "Allows the chest to recoil completely"
-    }, {
-      lineType: "sub",
-      points: 1,
-      text: "Adequate volumes for each breath"
-    }, {
-      lineType: "sub",
-      points: 1,
-      text: "Minimal interruptions of no more than 10 seconds throughout"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "After 2 minutes (5 cycles), candidate assesses patient and second rescuer resumes compressions while candidate operates AED"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Turns on power to AED"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Follows prompts and correctly attaches AED to patient"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Stops CPR and ensures all individuals are clear of the patient during  analysis"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Ensures that all individuals are clear of the patient and delivers shock from AED"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Immediately directs rescuer to resume chest compressions"
-    }]
-  },
-  joint: {
-    title: "Joint Immobilization",
-    shortTitle: "Joint Immobilization",
-    steps: [{
-      lineType: "default",
-      points: 1,
-      text: "Takes or verbalizes appropriate PPE precautions"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Directs application of manual stabilization of the injury"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Assesses distal motor, sensory and circulatory functions in the injured extremity"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\""
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Selects the proper splinting material"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Immobilizes the site of the injury"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Immobilizes the bone above the injury site"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Immobilizes the bone below the injury site"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Secures the entire injured extremity"
-    }, {
-      lineType: "default",
-      points: 1,
-      text: "Reassesses distal motor, sensory and circulatory functions in the injured extremity"
-    }, {
-      lineType: "note",
-      points: 0,
-      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\""
-    }]
-  },
-  longBone: {
-    title: "Long Bone Immobilization",
-    shortTitle: "Long Bone",
-    steps: [{
-      lineType: "default",
-      text: "Takes or verbalizes appropriate PPE precautions",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Directs application of manual stabilization of the injury",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Assesses distal motor, sensory and circulatory functions in the injured extremity",
-      points: 1
-    }, {
-      lineType: "note",
-      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\"",
-      points: 0
-    }, {
-      lineType: "default",
-      text: "Measures the splint",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Applies the splint",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Immobilizes the joint above the injury site",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Immobilizes the joint below the injury site",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Secures the entire injured extremity",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Immobilizes the hand/foot in the position of function",
-      points: 1
-    }, {
-      lineType: "default",
-      text: "Reassesses distal motor, sensory and circulatory functions in the injured extremity",
-      points: 1
-    }, {
-      lineType: "note",
-      text: "The examiner acknowledges, \"Motor, sensory and circulatory functions are present and normal.\"",
-      points: 0
-    }]
   }
-};
+];

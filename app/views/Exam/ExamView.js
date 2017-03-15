@@ -4,7 +4,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Button
+  Button,
+  Platform
 } from 'react-native';
 
 import ExamLineView from './ExamLineView';
@@ -16,7 +17,7 @@ class ExamView extends Component {
       right: (
         <Button
           title='CC'
-          color='white'
+          color={Platform.OS === 'ios' ? 'white' : '#0D6854'}
           onPress={() => navigate('CriticalCriteria', { exam: state.params.exam })}
         />
       ),

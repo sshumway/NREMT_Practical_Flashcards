@@ -2,7 +2,7 @@ import { AsyncStorage } from 'react-native';
 
 export async function loadExams() {
   try {
-    let examJson = await AsyncStorage.getItem('@NREMTPracticalFlashcards:exams');
+    const examJson = await AsyncStorage.getItem('@NREMTPracticalFlashcards:exams');
     if (!examJson) {
       return [];
     }
@@ -14,7 +14,13 @@ export async function loadExams() {
 
 export async function loadExamsVersion() {
   try {
-    return await AsyncStorage.getItem('@NREMTPracticalFlashcards:version');
+    const versionJson = await AsyncStorage.getItem('@NREMTPracticalFlashcards:version');
+    if (!versionJson) {
+      return {
+        version: -1
+      };
+    }
+    return JSON.parse(versionJson);
   } catch(error) {
     return "";
   }

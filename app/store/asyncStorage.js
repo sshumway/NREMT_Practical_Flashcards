@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native';
+import { oneUpdateIntervalAgo } from '../helpers/dateHelpers';
 
 export async function loadExams() {
   try {
@@ -22,11 +23,25 @@ export async function loadExamsVersion() {
     }
     return JSON.parse(versionJson);
   } catch(error) {
-    return "";
+    return {
+      version: -1
+    };
   }
 }
 
-export async function updateExams(exams) {
+export async function loadDateLastUpdated() {
+  try {
+    const lastUpdateDate = await AsyncStorage.getItem('@NREMTPracticalFlashcards:lastUpdateDate');
+    if (!lastUpdateDate) {
+      return oneUpdateIntervalAgo();
+    }
+    return new Date(JSON.parse(lastUpdateDate));
+  } catch (error) {
+    return oneUpdateIntervalAgo();
+  }
+}
+
+export async function saveExams(exams) {
   try {
     await AsyncStorage.setItem('@NREMTPracticalFlashcards:exams', JSON.stringify(exams));
     return true;
@@ -35,11 +50,20 @@ export async function updateExams(exams) {
   }
 }
 
-export async function updateExamsVersion(version) {
+export async function saveExamsVersion(version) {
   try {
     await AsyncStorage.setItem('@NREMTPracticalFlashcards:version', JSON.stringify(version));
     return true;
   } catch(error) {
+    return false;
+  }
+}
+
+export async function saveDateLastUpdated(date) {
+  try {
+    await AsyncStorage.setItem('@NREMTPracticalFlashcards:lastUpdateDate', JSON.stringify(date));
+    return true;
+  } catch (error) {
     return false;
   }
 }

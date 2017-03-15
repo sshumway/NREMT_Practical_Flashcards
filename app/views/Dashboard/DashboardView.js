@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
   },
   examLink: {
     fontSize: 20,
-    marginTop: 10,
-    marginBottom: 10
+    marginTop: 20,
+    marginBottom: 20
   }
 });
 

@@ -8,17 +8,16 @@ import {
 } from 'react-native';
 
 import ExamLineView from './ExamLineView';
-import exams from '../../../data/exams';
 
 class ExamView extends Component {
   static navigationOptions = {
-    title: ({ state }) => exams.find((ex) => ex.examID === state.params.examID).shortTitle,
+    title: ({ state }) => state.params.exam.shortTitle,
     header: ({ state, navigate }) => ({
       right: (
         <Button
           title='CC'
           color='white'
-          onPress={() => navigate('CriticalCriteria', { examID: state.params.examID })}
+          onPress={() => navigate('CriticalCriteria', { exam: state.params.exam })}
         />
       ),
       style: {
@@ -55,7 +54,7 @@ class ExamView extends Component {
 
   render() {
     const { params } = this.props.navigation.state;
-    const exam = exams.find((ex) => ex.examID === params.examID);
+    const exam = params.exam;
 
     return (
       <View style={styles.wrapper}>

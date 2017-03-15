@@ -6,11 +6,9 @@ import {
   StyleSheet
 } from 'react-native';
 
-import exams from '../../../data/exams';
-
 const CriticalCriteriaView = (nav) => {
-  let examID = nav.navigation.state.params.examID;
-  let criticalCriteria = exams.find((ex) => ex.examID === examID).criticalCriteria;
+  let exam = nav.navigation.state.params.exam;
+  let criticalCriteria = exam.criticalCriteria;
   return (
     <View style={styles.wrapper}>
       <ScrollView style={styles.scrollView}>

@@ -29,8 +29,8 @@ class DashboardView extends Component {
     }
   };
 
-  _showExam(examID) {
-    this.props.navigation.navigate('Exam', { examID });
+  _showExam(exam) {
+    this.props.navigation.navigate('Exam', { exam });
   }
 
   componentDidMount() {
@@ -61,7 +61,7 @@ class DashboardView extends Component {
       <ScrollView style={[styles.wrapper, styles.scrollViewWrapper]} contentInset={{top: 0, bottom: 100}}>
         {this.state.exams.map((exam, idx) => {
           return (
-            <TouchableOpacity key={idx} onPress={this._showExam.bind(this, exam.examID)} style={styles.borderBottom}>
+            <TouchableOpacity key={idx} onPress={this._showExam.bind(this, exam)} style={styles.borderBottom}>
               <Text style={styles.examLink}>{exam.title}</Text>
             </TouchableOpacity>
           );

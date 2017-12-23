@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -64,10 +65,10 @@ const styles = StyleSheet.create({
 });
 
 ExamLineView.propTypes = {
-  lineType: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired,
-  points: React.PropTypes.number.isRequired,
-  forceShow: React.PropTypes.bool
+  lineType: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  points: PropTypes.number.isRequired,
+  forceShow: PropTypes.bool
 };
 
 export default ExamLineView;

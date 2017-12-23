@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 const ExamLineText = ({lineType, text, points}) => {
   let lineStyle = lineType === 'header' || lineType === 'note' ? styles.highlightLine : styles.normalLine;
@@ -43,9 +44,9 @@ const styles = StyleSheet.create({
 });
 
 ExamLineText.propTypes = {
-  lineType: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired,
-  points: React.PropTypes.number.isRequired
+  lineType: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  points: PropTypes.number.isRequired
 };
 
 export default ExamLineText;

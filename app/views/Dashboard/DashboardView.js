@@ -19,13 +19,11 @@ class DashboardView extends Component {
 
   static navigationOptions = {
     title: 'Exams',
-    header: {
-      style: {
-        backgroundColor: '#15396a'
-      },
-      titleStyle: {
-        color: 'white'
-      }
+    headerStyle: {
+      backgroundColor: '#15396a'
+    },
+    headerTitleStyle: {
+      color: 'white'
     }
   };
 

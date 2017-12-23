@@ -10,15 +10,13 @@ const Navigator = StackNavigator({
     screen: CriticalCriteriaView,
     navigationOptions: {
       title: "Critical Criteria",
-      header: {
-        style: {
-          backgroundColor: '#15396a'
-        },
-        titleStyle: {
-          color: 'white'
-        },
-        tintColor: 'white'
-      }
+      headerStyle: {
+        backgroundColor: '#15396a'
+      },
+      headerTitleStyle: {
+        color: 'white'
+      },
+      headerTintColor: 'white'
     }
   }
 });

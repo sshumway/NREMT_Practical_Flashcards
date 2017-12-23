@@ -11,25 +11,24 @@ import {
 import ExamLineView from './ExamLineView';
 
 class ExamView extends Component {
-  static navigationOptions = {
-    title: ({ state }) => state.params.exam.shortTitle,
-    header: ({ state, navigate }) => ({
-      right: (
-        <Button
-          title='CC'
-          color={Platform.OS === 'ios' ? 'white' : '#0D6854'}
-          onPress={() => navigate('CriticalCriteria', { exam: state.params.exam })}
-        />
-      ),
-      style: {
-        backgroundColor: '#15396a'
-      },
-      titleStyle: {
-        color: 'white'
-      },
-      tintColor: 'white'
-    })
-  };
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: navigation.state.params.exam.shortTitle,
+    title: 'Exam',
+    headerRight: (
+      <Button
+        title='CC'
+        color={Platform.OS === 'ios' ? 'white' : '#0D6854'}
+        onPress={() => navigation.navigate('CriticalCriteria', { exam: navigation.state.params.exam })}
+      />
+    ),
+    headerStyle: {
+      backgroundColor: '#15396a'
+    },
+    headerTitleStyle: {
+      color: 'white'
+    },
+    headerTintColor: 'white'
+  });
 
   constructor(props) {
     super(props);
